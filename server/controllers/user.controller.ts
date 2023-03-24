@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 export class UserController {
   public static createUser: RequestHandler = async (req, res) => {
     const { body } = req;
+
     const data = await UserSchema.parseAsync(body);
     const salt = await bcrypt.genSalt(5);
     const hash = await bcrypt.hash(data.password, salt);
@@ -26,6 +27,7 @@ export class UserController {
 
   public static login: RequestHandler = async (req, res) => {
     const { body } = req;
+    console.log("body", body);
     const { SALT } = process.env;
     const data = await UserSchema.parseAsync(body);
     const user = await UserModel.findOne({
