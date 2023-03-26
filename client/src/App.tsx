@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link, Routes}
 import Login from './components/loginPage';
 import RegistrationPage from './components/registerPage';
 import ImageUploadPage from './components/uploadimagePage';
+import ViewImages from './components/viewImages';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -16,8 +17,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="page1" element={<Login />} />
-            <Route path="page2" element={<RegistrationPage />} />
+          <Route path="page2" element={<RegistrationPage />} />
           <Route path="page3" element={<ImageUploadPage />} />
+          <Route path="page4" element={<ViewImages />} />
         </Routes>
         <div className="list">
           <ul>
@@ -25,6 +27,7 @@ function App() {
             <li><Link to="page1">Login</Link></li>
             <li><Link to="page2">Register</Link></li>
             <li><Link to="page3">Upload image</Link></li>
+            <li><Link to="page4">View images</Link></li>
           </ul>
         </div>
       </Router>

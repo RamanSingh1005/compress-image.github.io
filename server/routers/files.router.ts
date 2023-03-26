@@ -8,4 +8,4 @@ const upload = multer();
 
 export const fileRouter = Router()
   .post("/file", upload.single("image"), FileController.saveFile)
-  .get("/files/:fileName", UserController.login);
+  .get("/getfiles", FileController.getFiles);
